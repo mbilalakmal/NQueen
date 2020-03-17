@@ -9,6 +9,7 @@
 # -----------------------------------------------------------
 
 import itertools
+import time
 
 import numpy as np
 
@@ -23,11 +24,19 @@ class Board:
         
         self._size = size
 
+
     def describe(self):
         '''
         Describe the positions of queens.
         '''
-        print(np.argwhere(self._occupancy_matrix==True))
+        for row in range(self._size):
+            for column in range(self._size):
+                if self._occupancy_matrix[row][column] == True:
+                    print("Q", end=" ")
+                else:
+                    print("_", end=" ")
+            print()
+        print()
 
 
 def place_queen(board: Board, row: int=0):
@@ -78,16 +87,19 @@ def _update_board(board: Board, row: int, column: int, forward: bool=True):
     for coordinate in itertools.product(range(board._size), repeat=2):
         x, y = coordinate
         if(
-            x == row or
-            y == column or
-            (x-y) == (row-column) or
-            (x+y) == (row+column)
+            x == row or y == column or  # same row or column
+            (x-y) == (row-column) or    # same main diagonal
+            (x+y) == (row+column)       # same other diagonal
         ):
             board._attacking_matrix[x][y] += 1 if forward else -1
 
 
 if __name__ == '__main__':
     size = input('Enter size of the board: ')
+    start_time = time.time()
     board = Board(int(size))
     place_queen(board)
+    finish_time = time.time()
     board.describe()
+    elapsed_time = finish_time - start_time
+    print(f'Completed in: {round(elapsed_time * 1000)} milliseconds')
