@@ -1,8 +1,11 @@
 # -----------------------------------------------------------
 # This module solves N-Queen problem recursively.
-# (1) Create a Board object
-# (2) Pass it to place_queen function
-# (3) The occupancy_matrix attribute contains the solution
+# Steps are as follows:
+# (1)   Create a Board object by passing in size(int).
+# (2)   Pass the board to place_queen function.
+# (3.A) Call the describe function of the board.
+# OR
+# (3.B) Access the occupancy_matrix for further computations.
 #
 #
 # (C) 2020 Muhammad Bilal Akmal, 17K-3669
