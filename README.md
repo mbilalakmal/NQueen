@@ -5,18 +5,18 @@ NQueen is a python module for solving the famous [N-Queen problem](https://en.wi
 
 ## Installation
 
-Copy the `nqueen.py` file to your project directory. NQueen is a single file namespace module so no setup is required.
+Copy the `queen.py` file to your project directory. NQueen is a single file namespace module so no setup is required.
 
 
 ## Usage
 
 ```python
-import nqueen
+import queen
 
 size = 8 # size of the board
-board = nqueen.Board(size) # creates a [size*size] board
+board = queen.Board(size) # creates a [size*size] board
 
-is_solved = nqueen.place_queen(board) # returns True if solved.
+is_solved = queen.place_queen(board) # returns True if solved.
 if is_solved == True:
     board.describe() # prints the board to console
 ```
