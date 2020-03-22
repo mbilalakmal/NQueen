@@ -6,7 +6,7 @@ NQueen is a python module for solving the famous [N-Queen problem](https://en.wi
 ## Installation
 
 Copy the `queen.py` file to your project directory. NQueen is a single file namespace module so no setup is required.
-To install dependencies(numpy) from `requirements.txt` run ```pip install -r requirements.txt```
+To install dependencies(numpy) from `requirements.txt` run ```python pip install -r requirements.txt```
 
 
 ## Usage
